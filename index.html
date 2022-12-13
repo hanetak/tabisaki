@@ -1,0 +1,33 @@
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.qrcode.min.js"></script>
+    <script type="text/JavaScript">
+    $(function(){
+      var qrtext = "テキスト";
+      var utf8qrtext = unescape(encodeURIComponent(qrtext));
+      $("#img-qr").html("");
+      $("#img-qr").qrcode({text:utf8qrtext}); 
+    });
+    function sendId() {
+      var qrtext = id;
+      var utf8qrtext = unescape(encodeURIComponent(qrtext));
+      $("#img-qr").html("");
+      $("#img-qr").qrcode({text:utf8qrtext});  
+      alert(txt.innerHTML);
+    }
+    </script>
+</head>
+
+<body>
+    <form method="post" action="" onsubmit=sendId() id="form1">
+        Id：<input type="text" id="name" value=""><br>
+        <input type="submit" value="送信">
+    </form>
+
+    <div id="img-qr"></div>
+</body>
+
+</html>
